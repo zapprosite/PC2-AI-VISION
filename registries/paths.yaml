@@ -1,0 +1,12 @@
+paths:
+  repo_root: /home/will/workspace/state/pc2-workstation-state
+  audit_source: /home/will/workspace/state/audits/pc2-readonly-audit-20260514-133752.md
+  ai_cockpit_app: /home/will/workspace/apps/ai-cockpit/app.py
+  ai_cockpit_service_user: /home/will/.config/systemd/user/ai-cockpit.service
+  opencode_desktop_dir: /opt/OpenCode
+  opencode_desktop_config: /home/will/.config/ai.opencode.desktop
+  opencode_cli_config: /home/will/.config/opencode
+  codex_config_dir: /home/will/.codex
+  claude_config_dir: /home/will/.claude
+  claude_router_service: /home/will/.config/systemd/user/claude-code-router.service
+  tunnel_service: /home/will/.config/systemd/user/pc1-litellm-tunnel.service

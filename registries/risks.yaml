@@ -1,0 +1,16 @@
+risks:
+  - id: claude-code-router-exposure
+    severity: high
+    title: Claude Code Router exposto em 0.0.0.0:3456 sem auth
+  - id: opencode-external-history
+    severity: medium
+    title: OpenCode Desktop possui historico de modelos externos/free
+  - id: scattered-sensitive-configs
+    severity: medium
+    title: Configs sensiveis espalhadas em ~/.config e ~/.local/share
+  - id: zero-swap
+    severity: low
+    title: Swap observado em 0B
+  - id: raw-state-ingestion
+    severity: high
+    title: Risco de ingestao de estado bruto de Electron ou Chromium no Git

@@ -1,0 +1,23 @@
+tools:
+  - name: OpenCode Desktop
+    path: /opt/OpenCode
+    status: installed
+  - name: OpenCode CLI
+    version: 1.14.48
+    path: /home/will/.local/share/npm/bin/opencode
+    status: installed
+  - name: Codex CLI
+    version: 0.130.0
+    path: /usr/bin/codex
+    status: installed
+  - name: Claude Code CLI
+    version: 2.1.139
+    path: /home/will/.local/share/npm/bin/claude
+    status: installed
+  - name: Antigravity
+    path: /usr/share/antigravity/antigravity
+    status: installed
+  - name: GitHub CLI
+    path: /usr/bin/gh
+    status: installed
+    auth: not_logged_in

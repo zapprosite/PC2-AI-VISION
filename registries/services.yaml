@@ -1,0 +1,20 @@
+services:
+  - name: ai-cockpit.service
+    scope: user
+    status: active
+    bind: 127.0.0.1:4140
+    risk: low
+    notes: AI Cockpit local ativo
+  - name: pc1-litellm-tunnel.service
+    scope: user
+    status: active
+    bind: 127.0.0.1:4018
+    risk: low
+    notes: Tunel SSH local para LiteLLM do PC1
+  - name: claude-code-router.service
+    scope: user
+    status: active
+    bind: 0.0.0.0:3456
+    risk: high
+    unauthenticated: true
+    notes: Exposicao ampla observada na auditoria

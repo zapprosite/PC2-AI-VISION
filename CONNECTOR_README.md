@@ -1,0 +1,16 @@
+# Connector README
+
+PC2 atua como workstation/cockpit local. O conector operacional principal hoje é o túnel para o LiteLLM do PC1:
+
+- endpoint local esperado: `http://127.0.0.1:4018/v1`
+- serviço associado: `pc1-litellm-tunnel.service`
+- consumidor preferencial: OpenCode Desktop e OpenCode CLI
+- modelo esperado: `hermes-code`
+
+Estado esperado do desktop:
+
+- provider preferido: `litellm-local`
+- modelo preferido: `hermes-code`
+- histórico com providers externos pode existir no desktop, mas não é o padrão desejado
+
+Este repositório documenta a topologia e os contratos locais, sem copiar credenciais nem estado de sessão.

@@ -1,0 +1,9 @@
+providers:
+  - name: litellm-local
+    baseURL: http://127.0.0.1:4018/v1
+    expected_model: hermes-code
+    preferred: true
+    notes: Provider local preferido para PC2
+  - name: opencode
+    preferred: false
+    notes: Historico de modelos external/free observado no desktop, nao preferido

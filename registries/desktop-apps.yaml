@@ -1,0 +1,16 @@
+desktop_apps:
+  - name: AI Cockpit
+    desktop_file: /home/will/.local/share/applications/ai-cockpit.desktop
+    exec: /home/will/workspace/scripts/ai-cockpit-launch
+  - name: OpenCode
+    desktop_file: /usr/share/applications/@opencode-aidesktop.desktop
+    exec: /opt/OpenCode/@opencode-aidesktop
+  - name: Antigravity
+    desktop_file: /usr/share/applications/antigravity.desktop
+    exec: /usr/share/antigravity/antigravity
+  - name: Antigravity URL Handler
+    desktop_file: /usr/share/applications/antigravity-url-handler.desktop
+    exec: /usr/share/antigravity/antigravity --open-url
+  - name: Claude Code URL Handler
+    desktop_file: /home/will/.local/share/applications/claude-code-url-handler.desktop
+    exec: not_a_primary_ide
