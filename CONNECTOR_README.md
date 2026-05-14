@@ -14,3 +14,5 @@ Estado esperado do desktop:
 - histórico com providers externos pode existir no desktop, mas não é o padrão desejado
 
 Este repositório documenta a topologia e os contratos locais, sem copiar credenciais nem estado de sessão.
+
+Para a relação entre audit, Git, snapshots e backup de arquivo, ver [snapshots-backups.md](/home/will/workspace/state/pc2-workstation-state/policies/snapshots-backups.md).
