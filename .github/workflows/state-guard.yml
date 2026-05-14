@@ -1,0 +1,110 @@
+name: state-guard
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Print Context
+        run: |
+          echo "repo=$GITHUB_REPOSITORY"
+          echo "ref=$GITHUB_REF"
+          echo "sha=$GITHUB_SHA"
+          pwd
+          git status --short || true
+
+      - name: Validate Required Files
+        run: |
+          set -euo pipefail
+          required_files=(
+            README.md
+            AGENTS.md
+            SECURITY.md
+            CONNECTOR_README.md
+            STATUS.md
+            ROADMAP.md
+            .gitignore
+            policies/secrets.md
+            policies/exposure.md
+            policies/git-safety.md
+            policies/snapshots-backups.md
+            registries/services.yaml
+            registries/tools.yaml
+            registries/risks.yaml
+            scripts/check-no-secrets.sh
+          )
+          for file in "${required_files[@]}"; do
+            test -f "$file"
+          done
+
+      - name: Check No Secrets
+        run: bash scripts/check-no-secrets.sh
+
+      - name: Block Prohibited Paths
+        run: |
+          set -euo pipefail
+          tracked_files="$(git ls-files)"
+          prohibited_pattern='(^|/)(auth\.json|credentials\.json|\.credentials\.json|router\.env|stagehand\.env)$|(^|/)\.env(\..*)?$|(^|/)[^/]*\.env$|(^|/).*\.dat$|(^|/)(Cookies|Local Storage|Session Storage|leveldb|node_modules|\.venv|__pycache__)(/|$)|(^|/).*\.(sqlite|sqlite3|db|log)$'
+          if printf '%s\n' "$tracked_files" | grep -E "$prohibited_pattern" >/tmp/state_guard_prohibited.txt; then
+            echo "prohibited tracked paths found:"
+            cat /tmp/state_guard_prohibited.txt
+            exit 1
+          fi
+
+      - name: Block Unexpected Large Files
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import sys
+
+          errors = []
+          for path in Path(".").rglob("*"):
+            if not path.is_file():
+              continue
+            if ".git" in path.parts:
+              continue
+            size = path.stat().st_size
+            rel = path.as_posix()
+            if rel.startswith("audits/") and rel.endswith(".md"):
+              if size > 1024 * 1024:
+                errors.append(f"{rel}: audit markdown exceeds 1 MB")
+            elif size > 512 * 1024:
+              errors.append(f"{rel}: file exceeds 512 KB")
+          if errors:
+            print("large file policy violation:")
+            for item in errors:
+              print(item)
+            sys.exit(1)
+          PY
+
+      - name: Validate YAML
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import sys
+
+          yaml_files = sorted(Path(".").rglob("*.yaml"))
+          try:
+            import yaml  # type: ignore
+          except ImportError:
+            for path in yaml_files:
+              text = path.read_text(encoding="utf-8").strip()
+              if not text or ":" not in text:
+                print(f"invalid fallback yaml check: {path}")
+                sys.exit(1)
+          else:
+            for path in yaml_files:
+              with path.open("r", encoding="utf-8") as handle:
+                yaml.safe_load(handle)
+          PY

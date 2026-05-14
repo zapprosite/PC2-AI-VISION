@@ -29,3 +29,10 @@
 ## Fase 7 OpenCode Desktop harness
 - documentar harness seguro
 - validar provider preferido e trilha de teste
+
+## Fase 8 GitHub Ops/GitOps-lite para PC2-AI-VISION
+- `state-guard`
+- PR template
+- issue templates
+- labels e rulesets depois via GitHub UI ou `gh`
+- depois aplicar equivalente no PC1

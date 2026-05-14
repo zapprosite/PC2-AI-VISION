@@ -16,3 +16,9 @@ Estado esperado do desktop:
 Este repositório documenta a topologia e os contratos locais, sem copiar credenciais nem estado de sessão.
 
 Para a relação entre audit, Git, snapshots e backup de arquivo, ver [snapshots-backups.md](/home/will/workspace/state/pc2-workstation-state/policies/snapshots-backups.md).
+
+Leitura recomendada adicional:
+
+- [github-ops.md](/home/will/workspace/state/pc2-workstation-state/policies/github-ops.md)
+- [state-guard.yml](/home/will/workspace/state/pc2-workstation-state/.github/workflows/state-guard.yml)
+- [pull_request_template.md](/home/will/workspace/state/pc2-workstation-state/.github/pull_request_template.md)
