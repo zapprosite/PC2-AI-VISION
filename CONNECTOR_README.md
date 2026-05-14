@@ -22,3 +22,12 @@ Leitura recomendada adicional:
 - [github-ops.md](/home/will/workspace/state/pc2-workstation-state/policies/github-ops.md)
 - [state-guard.yml](/home/will/workspace/state/pc2-workstation-state/.github/workflows/state-guard.yml)
 - [pull_request_template.md](/home/will/workspace/state/pc2-workstation-state/.github/pull_request_template.md)
+
+## Memória GPT Web
+
+Ordem de leitura recomendada:
+
+1. [CONTEXT_BRIEF.md](/home/will/workspace/state/pc2-workstation-state/gpt-web/CONTEXT_BRIEF.md)
+2. [NEXT_ACTIONS.md](/home/will/workspace/state/pc2-workstation-state/gpt-web/NEXT_ACTIONS.md)
+3. [DECISIONS.md](/home/will/workspace/state/pc2-workstation-state/gpt-web/DECISIONS.md)
+4. [SESSION_LEDGER.md](/home/will/workspace/state/pc2-workstation-state/gpt-web/SESSION_LEDGER.md)

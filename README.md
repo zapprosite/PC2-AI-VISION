@@ -19,3 +19,5 @@ Para política de snapshots e backups, ver [snapshots-backups.md](/home/will/wor
 - issue templates organizam audit, risk, change e smoke
 - não existe deploy automático
 - não existe runner local
+
+O diretório `gpt-web/` funciona como memória explícita para ChatGPT Web dentro deste state repo.

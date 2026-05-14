@@ -9,7 +9,7 @@ fail=0
 echo "checking prohibited filenames and paths"
 while IFS= read -r path; do
   case "$path" in
-    ./.gitignore|./README.md|./AGENTS.md|./SECURITY.md|./CONNECTOR_README.md|./STATUS.md|./ROADMAP.md|./maps|./maps/*|./registries|./registries/*|./policies|./policies/*|./audits|./audits/*|./scripts|./scripts/*|./notes|./notes/*|./.github|./.github/*|./.github/ISSUE_TEMPLATE|./.github/ISSUE_TEMPLATE/*|./.github/workflows|./.github/workflows/*|./.git|./.git/*)
+    ./.gitignore|./README.md|./AGENTS.md|./SECURITY.md|./CONNECTOR_README.md|./STATUS.md|./ROADMAP.md|./maps|./maps/*|./registries|./registries/*|./policies|./policies/*|./audits|./audits/*|./scripts|./scripts/*|./notes|./notes/*|./gpt-web|./gpt-web/*|./.github|./.github/*|./.github/ISSUE_TEMPLATE|./.github/ISSUE_TEMPLATE/*|./.github/workflows|./.github/workflows/*|./.git|./.git/*)
       ;;
     *)
       echo "unexpected path outside allowlist: $path"
