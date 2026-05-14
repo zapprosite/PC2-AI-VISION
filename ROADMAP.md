@@ -5,10 +5,10 @@
 - validar política de exclusão
 - confirmar inventário mínimo publicável
 
-## Fase 2 publicar PC2-AI-WORKSTATION-VISION
+## Fase 2 publicar PC2-AI-VISION
 - revisar conteúdo sanitizado
 - preparar publicação sem segredos
-- criar remoto apenas depois de revisão final
+- criar remoto `zapprosite/PC2-AI-VISION` apenas depois de revisão final
 
 ## Fase 3 conectar ChatGPT
 - mapear fluxo de uso
