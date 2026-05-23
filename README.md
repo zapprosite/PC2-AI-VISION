@@ -1,5 +1,9 @@
 # PC2 Workstation State
 
+## Hermes / Secretaria Local Brain
+
+Este repo e o brain operacional local/sanitizado do PC2 para Hermes, Secretaria e Tutor. Ele complementa o PC1 `homelab-context`, mas nao substitui a fonte canonica global. Para ordem de leitura, precedencia e proibicoes, use `~/workspace/homelab-context/docs/HERMES_SECRETARIA_BRAIN_GUARDRAIL.md`.
+
 Este repositório local descreve o estado sanitizado do PC2, a workstation/cockpit do ambiente Zappro/Hermes.
 
 Ele existe para documentar componentes, portas, serviços, paths, riscos e decisões operacionais do PC2. Não é backup. Não contém `secrets`, `auth.json`, `.env`, `.dat`, `Cookies`, `Local Storage`, `Session Storage` nem cópias brutas de `~/.config`.
@@ -19,5 +23,7 @@ Para política de snapshots e backups, ver [snapshots-backups.md](/home/will/wor
 - issue templates organizam audit, risk, change e smoke
 - não existe deploy automático
 - não existe runner local
+- Para trabalho Hermes/Gitea/GitHub no PC2, rode o gate 05/2026 em `~/workspace/homelab-context/scripts/gitops/gitea-gitops-build.sh` antes de PR/merge/push.
+- Runtime Hermes fica fora deste repo, em `/home/will/.hermes` no estado atual; `/home/will/hermes` so apos migracao explicita.
 
 O diretório `gpt-web/` funciona como memória explícita para ChatGPT Web dentro deste state repo.
