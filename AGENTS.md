@@ -9,6 +9,7 @@
 - Antes de PR/merge/push em trabalho Hermes/Gitea/GitHub, rode `~/workspace/homelab-context/scripts/gitops/gitea-gitops-build.sh`.
 - Runtime Hermes deve permanecer fora deste repo: `/home/will/.hermes` hoje; `/home/will/hermes` somente apos migracao explicita.
 - Nunca leia nem copie secrets, `.env`, cookies, auth stores, browser dumps ou bancos locais brutos.
+- Honcho Memory Stack em PC2 deve rodar estritamente em localhost/127.0.0.1 (API: `8020`, PostgreSQL: `5433`, Redis: `6377`).
 
 Leia [README.md](/home/will/workspace/state/pc2-workstation-state/README.md) primeiro.
 
